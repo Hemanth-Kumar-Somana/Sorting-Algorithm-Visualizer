@@ -1,0 +1,327 @@
+# Bubble Sort Visualization Demo
+
+## 🫧 Algorithm Overview
+**Bubble Sort** repeatedly compares adjacent elements and swaps them if they're in the wrong order. The largest element "bubbles up" to its correct position in each pass.
+
+## 📝 Input Example
+```bash
+$ python sorting_visualizer.py
+
+==================================================
+SORTING ALGORITHM VISUALIZER
+==================================================
+Enter array size (3-10): 5
+Enter 5 elements separated by spaces: 64 34 25 12 22
+Select sorting algorithm:
+1. Bubble Sort
+2. Quick Sort
+3. Merge Sort
+4. Selection Sort
+5. Insertion Sort
+6. Heap Sort
+7. Counting Sort
+Enter your choice (1-7): 1
+
+Starting Bubble Sort visualization...
+Opening visualization window...
+```
+
+## 🎯 Complete Step-by-Step Execution
+
+### Initial State
+```
+┌────┬────┬────┬────┬────┐
+│ 64 │ 34 │ 25 │ 12 │ 22 │
+└────┴────┴────┴────┴────┘
+```
+**Description:** Initial Unsorted array
+**Logic:** Starting with array [64, 34, 25, 12, 22]
+
+---
+
+### Pass 1: Bubble largest element to the end
+
+#### Step 1: Compare positions 1 and 2
+```
+┌────┬────┬────┬────┬────┐
+│ 64 │ 34 │ 25 │ 12 │ 22 │
+└─🔵─┴─🔵─┴────┴────┴────┘
+```
+**Description:** Compare 1st and 2nd elements
+**Logic:** Compare: 64 > 34
+
+#### Step 2: Swap needed
+```
+┌────┬────┬────┬────┬────┐
+│ 64 │ 34 │ 25 │ 12 │ 22 │
+└─🔵─┴─🔵─┴────┴────┴────┘
+```
+**Description:** Since 64 > 34, we need to swap
+**Logic:** Condition: 64 > 34 → SWAP needed
+
+#### Step 3: After swap
+```
+┌────┬────┬────┬────┬────┐
+│ 34 │ 64 │ 25 │ 12 │ 22 │
+└─🔴─┴─🔴─┴────┴────┴────┘
+```
+**Description:** Swap: 34 ↔ 64
+**Logic:** After swap: [34, 64]
+
+#### Step 4: Compare positions 2 and 3
+```
+┌────┬────┬────┬────┬────┐
+│ 34 │ 64 │ 25 │ 12 │ 22 │
+└────┴─🔵─┴─🔵─┴────┴────┘
+```
+**Description:** Compare 2nd and 3rd elements
+**Logic:** Compare: 64 > 25
+
+#### Step 5: Swap needed
+```
+┌────┬────┬────┬────┬────┐
+│ 34 │ 25 │ 64 │ 12 │ 22 │
+└────┴─🔴─┴─🔴─┴────┴────┘
+```
+**Description:** Swap: 25 ↔ 64
+**Logic:** After swap: position 2=25, position 3=64
+
+#### Step 6: Compare positions 3 and 4
+```
+┌────┬────┬────┬────┬────┐
+│ 34 │ 25 │ 64 │ 12 │ 22 │
+└────┴────┴─🔵─┴─🔵─┴────┘
+```
+**Description:** Compare 3rd and 4th elements
+**Logic:** Compare: 64 > 12
+
+#### Step 7: Swap needed
+```
+┌────┬────┬────┬────┬────┐
+│ 34 │ 25 │ 12 │ 64 │ 22 │
+└────┴────┴─🔴─┴─🔴─┴────┘
+```
+**Description:** Swap: 12 ↔ 64
+**Logic:** After swap: position 3=12, position 4=64
+
+#### Step 8: Compare positions 4 and 5
+```
+┌────┬────┬────┬────┬────┐
+│ 34 │ 25 │ 12 │ 64 │ 22 │
+└────┴────┴────┴─🔵─┴─🔵─┘
+```
+**Description:** Compare 4th and 5th elements
+**Logic:** Compare: 64 > 22
+
+#### Step 9: Final swap of Pass 1
+```
+┌────┬────┬────┬────┬────┐
+│ 34 │ 25 │ 12 │ 22 │ 64 │
+└────┴────┴────┴─🔴─┴─🔴─┘
+```
+**Description:** Swap: 22 ↔ 64
+**Logic:** After swap: position 4=22, position 5=64
+
+#### Step 10: Pass 1 Complete
+```
+┌────┬────┬────┬────┬────┐
+│ 34 │ 25 │ 12 │ 22 │ 64 │
+└────┴────┴────┴────┴─✅─┘
+```
+**Description:** Pass 1 complete - Largest element moved to position 5
+**Logic:** Continue to next pass...
+
+---
+
+### Pass 2: Second largest element
+
+#### Step 11: Compare positions 1 and 2
+```
+┌────┬────┬────┬────┬────┐
+│ 34 │ 25 │ 12 │ 22 │ 64 │
+└─🔵─┴─🔵─┴────┴────┴─✅─┘
+```
+**Description:** Compare 1st and 2nd elements
+**Logic:** Compare: 34 > 25
+
+#### Step 12: Swap needed
+```
+┌────┬────┬────┬────┬────┐
+│ 25 │ 34 │ 12 │ 22 │ 64 │
+└─🔴─┴─🔴─┴────┴────┴─✅─┘
+```
+**Description:** Swap: 25 ↔ 34
+**Logic:** After swap: [25, 34]
+
+#### Step 13: Compare positions 2 and 3
+```
+┌────┬────┬────┬────┬────┐
+│ 25 │ 34 │ 12 │ 22 │ 64 │
+└────┴─🔵─┴─🔵─┴────┴─✅─┘
+```
+**Description:** Compare 2nd and 3rd elements
+**Logic:** Compare: 34 > 12
+
+#### Step 14: Swap needed
+```
+┌────┬────┬────┬────┬────┐
+│ 25 │ 12 │ 34 │ 22 │ 64 │
+└────┴─🔴─┴─🔴─┴────┴─✅─┘
+```
+**Description:** Swap: 12 ↔ 34
+**Logic:** After swap: position 2=12, position 3=34
+
+#### Step 15: Compare positions 3 and 4
+```
+┌────┬────┬────┬────┬────┐
+│ 25 │ 12 │ 34 │ 22 │ 64 │
+└────┴────┴─🔵─┴─🔵─┴─✅─┘
+```
+**Description:** Compare 3rd and 4th elements
+**Logic:** Compare: 34 > 22
+
+#### Step 16: Swap needed
+```
+┌────┬────┬────┬────┬────┐
+│ 25 │ 12 │ 22 │ 34 │ 64 │
+└────┴────┴─🔴─┴─🔴─┴─✅─┘
+```
+**Description:** Swap: 22 ↔ 34
+**Logic:** After swap: position 3=22, position 4=34
+
+#### Step 17: Pass 2 Complete
+```
+┌────┬────┬────┬────┬────┐
+│ 25 │ 12 │ 22 │ 34 │ 64 │
+└────┴────┴────┴─✅─┴─✅─┘
+```
+**Description:** Pass 2 complete - Second largest element in position 4
+**Logic:** Continue to next pass...
+
+---
+
+### Pass 3: Third largest element
+
+#### Step 18: Compare positions 1 and 2
+```
+┌────┬────┬────┬────┬────┐
+│ 25 │ 12 │ 22 │ 34 │ 64 │
+└─🔵─┴─🔵─┴────┴─✅─┴─✅─┘
+```
+**Description:** Compare 1st and 2nd elements
+**Logic:** Compare: 25 > 12
+
+#### Step 19: Swap needed
+```
+┌────┬────┬────┬────┬────┐
+│ 12 │ 25 │ 22 │ 34 │ 64 │
+└─🔴─┴─🔴─┴────┴─✅─┴─✅─┘
+```
+**Description:** Swap: 12 ↔ 25
+**Logic:** After swap: [12, 25]
+
+#### Step 20: Compare positions 2 and 3
+```
+┌────┬────┬────┬────┬────┐
+│ 12 │ 25 │ 22 │ 34 │ 64 │
+└────┴─🔵─┴─🔵─┴─✅─┴─✅─┘
+```
+**Description:** Compare 2nd and 3rd elements
+**Logic:** Compare: 25 > 22
+
+#### Step 21: Swap needed
+```
+┌────┬────┬────┬────┬────┐
+│ 12 │ 22 │ 25 │ 34 │ 64 │
+└────┴─🔴─┴─🔴─┴─✅─┴─✅─┘
+```
+**Description:** Swap: 22 ↔ 25
+**Logic:** After swap: position 2=22, position 3=25
+
+#### Step 22: Pass 3 Complete
+```
+┌────┬────┬────┬────┬────┐
+│ 12 │ 22 │ 25 │ 34 │ 64 │
+└────┴────┴─✅─┴─✅─┴─✅─┘
+```
+**Description:** Pass 3 complete - Third largest element in position 3
+**Logic:** Continue to next pass...
+
+---
+
+### Pass 4: Final comparison
+
+#### Step 23: Compare positions 1 and 2
+```
+┌────┬────┬────┬────┬────┐
+│ 12 │ 22 │ 25 │ 34 │ 64 │
+└─🔵─┴─🔵─┴─✅─┴─✅─┴─✅─┘
+```
+**Description:** Compare 1st and 2nd elements
+**Logic:** Compare: 12 ≤ 22
+
+#### Step 24: No swap needed
+```
+┌────┬────┬────┬────┬────┐
+│ 12 │ 22 │ 25 │ 34 │ 64 │
+└─🔵─┴─🔵─┴─✅─┴─✅─┴─✅─┘
+```
+**Description:** Since 12 ≤ 22, no swap needed
+**Logic:** Condition: 12 ≤ 22 → No swap
+
+#### Step 25: Pass 4 Complete - No swaps made!
+```
+┌────┬────┬────┬────┬────┐
+│ 12 │ 22 │ 25 │ 34 │ 64 │
+└────┴────┴────┴────┴────┘
+```
+**Description:** Pass 4 complete - No swaps made, array is sorted!
+**Logic:** All elements are in correct order
+
+---
+
+### Final Result
+```
+┌────┬────┬────┬────┬────┐
+│ 12 │ 22 │ 25 │ 34 │ 64 │
+└─✅─┴─✅─┴─✅─┴─✅─┴─✅─┘
+```
+**Description:** Bubble Sort Complete - Array is now sorted!
+**Logic:** All elements: a₁ ≤ a₂ ≤ a₃ ≤ a₄ ≤ a₅
+
+## 📊 Summary Statistics
+
+| Metric | Value |
+|--------|-------|
+| **Total Steps** | 26 |
+| **Passes Required** | 4 |
+| **Total Comparisons** | 10 |
+| **Total Swaps** | 8 |
+| **Time Complexity** | O(n²) |
+| **Space Complexity** | O(1) |
+
+## 🎮 Interactive Controls Used
+
+```bash
+# During visualization:
+→ Click "Next →" 26 times to see each step
+→ Click "← Previous" to review any step
+→ Click "Auto Play" for automatic progression
+→ Click "View All Steps" to see complete summary table
+→ Click "Reset" to return to initial state
+```
+
+## 💡 Key Learning Points
+
+1. **Bubble Behavior**: Largest elements "bubble up" to correct positions
+2. **Early Termination**: Algorithm stops when no swaps are made in a pass
+3. **Optimization**: Each pass reduces the comparison range
+4. **Stability**: Equal elements maintain their relative order
+5. **Best Case**: O(n) when array is already sorted (with optimization)
+6. **Worst Case**: O(n²) when array is reverse sorted
+
+## 🔍 Visual Legend
+- 🔵 **Light Blue**: Elements being compared
+- 🔴 **Light Coral**: Elements being swapped  
+- ✅ **Green Check**: Elements in final sorted position
+- **White**: Unsorted elements waiting to be processed
